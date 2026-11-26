@@ -1,0 +1,42 @@
+# TheSift configuration
+
+# Extra logging for troubleshooting.
+debug: false
+
+dimension:
+  # Namespaced key of the Sift world, defined by the bundled datapack.
+  key: "sift:the_sift"
+  # Name of the vanilla world folder whose datapacks/ directory receives the datapack.
+  # On Paper this is the level-name from server.properties (default "world").
+  level-name: "world"
+  # Copy the datapack on startup if it is missing or outdated (restart needed after a change).
+  install-datapack: true
+
+tides:
+  enabled: true
+  # Durations in real seconds. Cycle order: FLOW -> THRIVE -> ENDURE -> FLOW
+  duration-seconds:
+    flow: 900
+    thrive: 600
+    endure: 480
+  # Seconds before the Endure Tide that players in the Sift get a warning.
+  warning-seconds: 30
+  # Allow sleeping during Endure Tide (design decision, see README).
+  allow-sleep-during-endure: true
+
+storage:
+  autosave-seconds: 60
+
+# The plugin does NOT host the resource pack. Upload TheSift-ResourcePack.zip to any public
+# HTTPS file host, then fill in the URL and the SHA-1 of that exact file.
+# Get the hash with:  sha1sum TheSift-ResourcePack.zip   (Linux/macOS)
+#                     Get-FileHash -Algorithm SHA1 TheSift-ResourcePack.zip   (PowerShell)
+resourcepack:
+  enabled: false
+  url: ""
+  sha1: ""
+  # true = clients that decline are disconnected by the client.
+  required: false
+  prompt: "The Sift resource pack"
+  # Bump this whenever you upload a new pack so clients re-download it.
+  version: "1"

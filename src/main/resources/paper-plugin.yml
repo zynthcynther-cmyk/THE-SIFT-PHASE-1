@@ -1,0 +1,5 @@
+name: TheSift
+version: '${version}'
+main: com.sift.core.SiftPlugin
+description: A Sift-inspired dimension for Paper
+api-version: '26.3'
